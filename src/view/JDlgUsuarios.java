@@ -24,7 +24,9 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         initComponents();
         setTitle("Cadastro de Usuários");
         setLocationRelativeTo(null);
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jCboNivel);
+        Util.habilitar(false, jTxtCodigo, jTxtNome,jFmtCpf,jFmtDataDeNascimento,jTxtApelido,
+                jPwfSenha, jCboNivel,jChbAtivo,jBtnCancelar,jBtnConfirmar);
+
     }
     
 
@@ -80,6 +82,12 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         });
 
         jLabel3.setText("Apelido");
+
+        jTxtApelido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtApelidoActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("CPF");
 
@@ -248,12 +256,17 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
-
-
+        Util.habilitar(true, jTxtCodigo, jTxtNome,jFmtCpf,jFmtDataDeNascimento,jTxtApelido,
+                jPwfSenha, jCboNivel,jChbAtivo,jBtnAlterar,jBtnCancelar,jBtnConfirmar);
+Util.habilitar(false, jBtnIncluir, jBtnPesquisar,jBtnExcluir, jBtnAlterar);
+   Util.limpar(jTxtNome,jTxtApelido,jTxtCodigo);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(true, jTxtCodigo, jTxtNome,jFmtCpf,jFmtDataDeNascimento,jTxtApelido,
+                jPwfSenha, jCboNivel,jChbAtivo,jBtnAlterar,jBtnCancelar,jBtnConfirmar);
+Util.habilitar(false, jBtnIncluir, jBtnPesquisar,jBtnExcluir, jBtnAlterar);
 
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
@@ -265,7 +278,10 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
- 
+  Util.habilitar(false, jTxtCodigo, jTxtNome,jFmtCpf,jFmtDataDeNascimento,jTxtApelido,
+                jPwfSenha, jCboNivel,jChbAtivo,jBtnAlterar,jBtnCancelar,jBtnConfirmar);
+        Util.habilitar(true, jBtnIncluir, jBtnPesquisar,jBtnExcluir,jBtnAlterar);
+        
 
 
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
@@ -278,6 +294,9 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(false, jTxtCodigo, jTxtNome,jFmtCpf,jFmtDataDeNascimento,jTxtApelido,
+                jPwfSenha, jCboNivel,jChbAtivo,jBtnAlterar,jBtnCancelar,jBtnConfirmar);
+        Util.habilitar(true, jBtnIncluir, jBtnPesquisar,jBtnExcluir,jBtnAlterar);
 
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
@@ -289,6 +308,10 @@ public class JDlgUsuarios extends javax.swing.JDialog {
     private void jCboNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCboNivelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCboNivelActionPerformed
+
+    private void jTxtApelidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtApelidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtApelidoActionPerformed
 
     /**
      * @param args the command line arguments
