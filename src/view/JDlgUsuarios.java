@@ -288,7 +288,7 @@ Util.habilitar(false, jBtnIncluir, jBtnPesquisar,jBtnExcluir, jBtnAlterar);
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here: 
-
+   Util.mensagem("Nao implementado");
 
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
