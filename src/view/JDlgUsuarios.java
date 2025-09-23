@@ -107,6 +107,11 @@ private boolean incluir;
                 jTxtCodigoFocusLost(evt);
             }
         });
+        jTxtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtCodigoActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nome");
 
@@ -369,6 +374,10 @@ private boolean incluir;
     private void jTxtApelidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtApelidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtApelidoActionPerformed
+
+    private void jTxtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtCodigoActionPerformed
 
     /**
      * @param args the command line arguments

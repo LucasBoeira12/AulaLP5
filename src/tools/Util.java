@@ -5,9 +5,12 @@
 package tools;
 
 import java.util.Date;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -28,9 +31,17 @@ public class Util {
         } 
             if (componentes[i] instanceof JComboBox){
             ((JComboBox) componentes[i]).setSelectedIndex(-1);
+        } 
+        if (componentes[i] instanceof JFormattedTextField){
+            ((JFormattedTextField) componentes[i]).setText("");
         }
+        if (componentes[i] instanceof JPasswordField){
+            ((JPasswordField) componentes[i]).setText("");
         }
-    
+        if (componentes[i] instanceof JCheckBox){
+            ((JCheckBox) componentes[i]).setSelected(false);
+        }
+    }
     }
     public static void mensagem(String cad){
         JOptionPane.showMessageDialog(null, cad);
@@ -50,10 +61,18 @@ public class Util {
     public static double strToDouble(String cad){
     return Double.valueOf(cad);
     }
-    public static Date strToDate(String cad){
-    return null;
+    
+    //VI VARIOS VIDEOS PROFESSOR E ESSE FOI MODO QUE EU CONSEGUI ENTENDER OQ REALMENTE ACONTECE DE FAZER O DATE
+   public static Date strToDate(String cad){
+    try {
+        return new java.text.SimpleDateFormat("dd/MM/yyyy").parse(cad);
+    } catch (Exception e) {
+        return null;
     }
-    public static String dateToStr(Date data){
-    return String.valueOf(data);
-    }
+}
+
+public static String dateToStr(Date data){
+    return new java.text.SimpleDateFormat("dd/MM/yyyy").format(data);
+    
+}
 }
